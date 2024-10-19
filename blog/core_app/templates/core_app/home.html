@@ -1,5 +1,29 @@
 {% extends "base.html" %}
+{% load static %}
+
+
+
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'core_app/css/style.css' %}">
+{% endblock %}
 
 {% block content %}
     <h1>Головна сторінка</h1>
+    
+    {% if username %}
+        <h2>Вітаємо, {{ username }}!</h2>
+    {% else %}
+        <h2>Ви не війшли в акаунт</h2>
+    {% endif %}
+
+    <h3>Категорії статей нашого сайту:</h3>
+
+    <ul>
+        {% for category in categories %}
+            <li><h4>{{ category }}</h4></li>
+        {% endfor %}
+    </ul>
+
+
 {% endblock %}

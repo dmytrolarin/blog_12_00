@@ -2,4 +2,15 @@ from django.shortcuts import render
 
 # Create your views here.
 def show_home(request):
-    return render(request,"core_app/home.html")
+    username = 'Dima'
+    category_list = ["Політика", "Спорт", "ІТ"]
+
+    return render(
+        request,
+        "core_app/home.html",
+        context = {
+            "username": username,
+            "categories": category_list
+        }
+    )
+
