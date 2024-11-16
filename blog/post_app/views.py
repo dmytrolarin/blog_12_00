@@ -1,10 +1,10 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Post
 
 
 def view_all_posts(request):
-    return render(request, "post_app/all_posts.html")
+    all_posts = Post.objects.filter(published = True)
+    return render(request, "post_app/all_posts.html", context = { 'all_posts': all_posts })
 
 def view_post(request):
     return render(request, "post_app/view_post.html")
