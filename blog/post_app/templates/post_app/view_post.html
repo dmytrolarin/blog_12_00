@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Конкретний пост</h1>
+    <h1>{{ post.title }}</h1>
+    <h2>Автор: {{ post.author }}</h2>
+    <p>{{ post.content }}</p>
 {% endblock %}
